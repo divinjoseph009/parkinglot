@@ -1,8 +1,10 @@
 package com.example.parkinglot;
 
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -49,7 +51,11 @@ public class ParkingLotUI {
     }
 
     private void setUpWindowLayout(){
-
+        VBox vBox = new VBox(20, entryTimeLabel, entryTimeText, exitTimeLabel, exitTimeText, submitButton, durationResultLabel, durationResult, feeResultLabel, feeResult);
+        Scene scene = new Scene(vBox, 400, 400);
+        stage.setTitle("Parking Lot Management");
+        stage.setScene(scene);
+        stage.show();
     }
 
 
