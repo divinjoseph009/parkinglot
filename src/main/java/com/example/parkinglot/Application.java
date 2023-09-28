@@ -11,6 +11,9 @@ public class Application extends javafx.application.Application {
     public void start(Stage stage) throws IOException {
         ParkingLotUI parkingLotUI = new ParkingLotUI(stage);
 
+        ParkingLot parkingLot=new ParkingLot();
+        Controller controller=new Controller(parkingLotUI, parkingLot);
+
 
     }
 
