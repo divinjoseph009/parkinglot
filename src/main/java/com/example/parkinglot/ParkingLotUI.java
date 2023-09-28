@@ -58,6 +58,10 @@ public class ParkingLotUI {
         stage.show();
     }
 
+    public String getUserEntryTime() { return  entryTimeText.getText(); }
+    public String getUserExitTime() { return  entryTimeText.getText(); }
+    public Button getSubmitButton() { return submitButton; }
+
 
 
 }
