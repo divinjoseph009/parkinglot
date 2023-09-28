@@ -59,7 +59,7 @@ public class ParkingLotUI {
     }
 
     public String getUserEntryTime() { return  entryTimeText.getText(); }
-    public String getUserExitTime() { return  entryTimeText.getText(); }
+    public String getUserExitTime() { return  exitTimeText.getText(); }
     public Button getSubmitButton() { return submitButton; }
 
 
