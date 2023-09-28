@@ -3,7 +3,7 @@ package com.example.parkinglot;
 public class ParkingLot {
     Ticket parkingTicket = new Ticket();
 
-    private double calculateFees() {
+    public double calculateFees() {
         int durationDays = parkingTicket.getDurationDays();
         int durationHours = parkingTicket.getDurationHours();
         int durationMinutes = parkingTicket.getDurationMinutes();
