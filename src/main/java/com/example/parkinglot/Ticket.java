@@ -26,6 +26,8 @@ public class Ticket {
         return entryTime;
     }
 
+
+
     public LocalDateTime getExitTime() {
         return exitTime;
     }
@@ -38,6 +40,7 @@ public class Ticket {
     public void setExitTime(String exitTime) {
         this.exitTime = LocalDateTime.parse(exitTime, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm"));
     }
+
 
 
     //Calculate Duration from Entry and Exit Time
