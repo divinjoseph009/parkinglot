@@ -6,7 +6,7 @@ public class ParkingLot {
     int durationHours = parkingTicket.getDurationHours();
     int durationMinutes = parkingTicket.getDurationMinutes();
 
-    private double calculateFees() {
+    public double calculateFees() {
         int fee = 0;
 
         if (durationDays == 0 && durationHours == 0 && durationMinutes <= 30) {
