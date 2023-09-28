@@ -9,7 +9,7 @@ import java.io.IOException;
 public class Application extends javafx.application.Application {
     @Override
     public void start(Stage stage) throws IOException {
-        ParkingLotUI parkingLotUI = new ParkingLotUI();
+        ParkingLotUI parkingLotUI = new ParkingLotUI(stage);
 
 
     }
