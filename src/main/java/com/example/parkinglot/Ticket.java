@@ -7,11 +7,11 @@ public class Ticket {
     LocalDateTime entryTime;
     LocalDateTime exitTime;
 
-    Ticket(LocalDateTime entryTime, LocalDateTime exitTime){
-        this.entryTime = entryTime;
-        this.exitTime = exitTime;
-
-    }
+//    Ticket(LocalDateTime entryTime, LocalDateTime exitTime){
+//        this.entryTime = entryTime;
+//        this.exitTime = exitTime;
+//
+//    }
 
     //Calculate Duration from Entry and Exit Time
     public int getDurationDays() {
