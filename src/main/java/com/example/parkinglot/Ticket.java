@@ -64,16 +64,4 @@ public class Ticket {
         long durationMinutes = Duration.between(entryTime, exitTime).toMinutes();
         return (int) durationMinutes;
     }
-
-
-    //This method calculates the duration in minutes on the first day,
-    // if the stay is less than or equal to 30 minutes,
-    // the DURATION (not costs) is rounded down to zero.
-    public int calculateDurationOnFirstDay() {
-        int minutes = getDurationMinutes();
-        if (minutes <= 30) {
-            return 0;
-        }
-        return minutes;
-    }
 }
