@@ -28,7 +28,7 @@ public class ParkingLotUI {
     Text feeResult;
 
 
-    public ParkingLotUI(Stage stage){
+    public ParkingLotUI(){
         this.stage = stage;
         openWindow();
     }
