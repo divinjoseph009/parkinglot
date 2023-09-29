@@ -37,6 +37,8 @@ public class Ticket {
 
     //Calculate Duration from Entry and Exit Time
     public int getDurationDays() {
+
+
         ZonedDateTime entryZonedDateTime = entryTime.atZone(ZoneId.systemDefault());
         ZonedDateTime exitZonedDateTime = exitTime.atZone(ZoneId.systemDefault());
         long durationDays = Duration.between(entryZonedDateTime, exitZonedDateTime).toDays();

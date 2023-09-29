@@ -12,15 +12,15 @@ import java.time.LocalDateTime;
 public class Controller {
     //reference to UI elements
     private ParkingLotUI window;
-    Ticket ticket;
     ParkingLot parkingLot;
-    Ticket ticketCalculation=new Ticket();
+    Ticket ticket;
 
 
 
-    public Controller(ParkingLotUI parkingLotUI, ParkingLot parkingLot){
+    public Controller(ParkingLotUI parkingLotUI, ParkingLot parkingLot, Ticket ticket){
         this.window=parkingLotUI;
         this.parkingLot=parkingLot;
+        this.ticket=ticket;
         setUpHandlers();
     }
 
@@ -29,15 +29,15 @@ public class Controller {
             try{
                 String userEntryTime = this.window.getUserEntryTime();
                 String userExitTime = this.window.getUserExitTime();
-                ticketCalculation.setEntryTime(userEntryTime);
-                ticketCalculation.setExitTime(userExitTime);
-                LocalDateTime entryTime=ticketCalculation.getEntryTime();
-                LocalDateTime exitTime=ticketCalculation.getExitTime();
+                ticket.setEntryTime(userEntryTime);
+                ticket.setExitTime(userExitTime);
+                LocalDateTime entryTime=ticket.getEntryTime();
+                LocalDateTime exitTime=ticket.getExitTime();
 
                 if(entryTime.isBefore(exitTime)) {
-                    int durationInDays = ticketCalculation.getDurationDays();
-                    int durationInHours = ticketCalculation.getDurationHours();
-                    int durationInMinutes= ticketCalculation.getDurationMinutes();
+                    int durationInDays = ticket.getDurationDays();
+                    int durationInHours = ticket.getDurationHours();
+                    int durationInMinutes= ticket.getDurationMinutes();
                     double fees=parkingLot.calculateFees();
                     System.out.println("Duration: "+durationInDays + " "+ durationInHours +" "+durationInMinutes);
                     System.out.printf("Fee: "+fees);

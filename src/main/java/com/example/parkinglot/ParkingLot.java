@@ -1,13 +1,20 @@
 package com.example.parkinglot;
 
 public class ParkingLot {
-    Ticket parkingTicket = new Ticket();
+
+    Ticket ticket;
+
+
+    ParkingLot(Ticket ticket) {
+        this.ticket = ticket;
+    }
 
 
     public double calculateFees() {
-        int durationDays = parkingTicket.getDurationDays();
-        int durationHours = parkingTicket.getDurationHours();
-        int durationMinutes = parkingTicket.getDurationMinutes();
+
+        int durationDays = ticket.getDurationDays();
+        int durationHours = ticket.getDurationHours();
+        int durationMinutes = ticket.getDurationMinutes();
         int fee = 0;
 
         if (durationDays == 0 && durationHours == 0 && durationMinutes <= 30) {

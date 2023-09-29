@@ -10,11 +10,9 @@ public class Application extends javafx.application.Application {
     @Override
     public void start(Stage stage) throws IOException {
         ParkingLotUI parkingLotUI = new ParkingLotUI(stage);
-
-        ParkingLot parkingLot=new ParkingLot();
-        Controller controller=new Controller(parkingLotUI, parkingLot);
-
-
+        Ticket ticket = new Ticket();
+        ParkingLot parkingLot=new ParkingLot(ticket);
+        new Controller(parkingLotUI, parkingLot, ticket);
     }
 
     public static void main(String[] args) {
