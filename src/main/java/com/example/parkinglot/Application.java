@@ -9,10 +9,16 @@ import java.io.IOException;
 public class Application extends javafx.application.Application {
     @Override
     public void start(Stage stage) throws IOException {
-        ParkingLotUI parkingLotUI = new ParkingLotUI(stage);
+        // Models
         Ticket ticket = new Ticket();
         ParkingLot parkingLot=new ParkingLot(ticket);
-        new Controller(parkingLotUI, parkingLot, ticket);
+
+        // View
+        ParkingLotUI parkingLotUI = new ParkingLotUI(stage);
+
+        // Controller
+        Controller controller = new Controller(parkingLotUI, parkingLot, ticket);
+        controller.runApplication();
     }
 
     public static void main(String[] args) {

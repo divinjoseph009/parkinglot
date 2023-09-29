@@ -22,7 +22,7 @@ public class ParkingLot {
         } else {
             fee += 15 * durationDays;
             int remainingHours = durationHours - (durationDays * 24);
-            int remainingMins = durationMinutes - (durationDays * 1440) - (durationHours * 60);
+            int remainingMins = durationMinutes - (durationDays * 1440) - (remainingHours * 60);
             int lastDaysFee = 2 * remainingHours;
 
             if (remainingMins > 0) {

@@ -15,14 +15,17 @@ public class Controller {
     ParkingLot parkingLot;
     Ticket ticket;
 
-
-
     public Controller(ParkingLotUI parkingLotUI, ParkingLot parkingLot, Ticket ticket){
         this.window=parkingLotUI;
         this.parkingLot=parkingLot;
         this.ticket=ticket;
+
+    }
+
+    public void runApplication(){
         setUpHandlers();
     }
+
 
     public void setUpHandlers(){
         window.getSubmitButton().setOnAction(e->{
