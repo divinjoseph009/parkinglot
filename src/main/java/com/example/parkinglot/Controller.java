@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
 import java.time.DateTimeException;
@@ -28,6 +29,9 @@ public class Controller {
 
     public void setUpHandlers(){
         window.getSubmitButton().setOnAction(e->{
+            Text durationResult = window.getDurationResult();
+            Text feeResult = window.getFeeResult();
+
             try{
                 String userEntryTime = window.getUserEntryTime();
                 String userExitTime = window.getUserExitTime();
@@ -36,18 +40,22 @@ public class Controller {
                 LocalDateTime entryTime=ticket.getEntryTime();
                 LocalDateTime exitTime=ticket.getExitTime();
 
+
+
                 if(entryTime.isBefore(exitTime)) {
-                    int durationInDays = ticket.getDurationDays();
-                    int durationInHours = ticket.getDurationHours();
-                    int durationInMinutes= ticket.getDurationMinutes();
+                    int days = ticket.getDurationDays();
+                    int hours = parkingLot.remainingHours;
+                    int minutes = parkingLot.remainingMinutes;
                     double fees=parkingLot.calculateFees();
-                    System.out.println("Duration: "+durationInDays + " "+ durationInHours +" "+durationInMinutes);
-                    System.out.printf("Fee: "+fees);
+
+
+                    durationResult.setText("Days: " + days + " Hours: " + hours + " Minutes: " + minutes);
+                    feeResult.setText("$ " + fees);
                 }
 
                 }catch (DateTimeException exception){
-                System.out.println("This is not a valid date");
-
+                durationResult.setText("This is not a valid date");
+                durationResult.setFill(Color.RED);
             }
         });
     }

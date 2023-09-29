@@ -3,6 +3,8 @@ package com.example.parkinglot;
 public class ParkingLot {
 
     Ticket ticket;
+    int remainingHours;
+    int remainingMinutes;
 
 
     ParkingLot(Ticket ticket) {
@@ -21,11 +23,11 @@ public class ParkingLot {
             return fee;
         } else {
             fee += 15 * durationDays;
-            int remainingHours = durationHours - (durationDays * 24);
-            int remainingMins = durationMinutes - (durationDays * 1440) - (remainingHours * 60);
+            remainingHours = durationHours - (durationDays * 24);
+            remainingMinutes = durationMinutes - (durationDays * 1440) - (remainingHours * 60);
             int lastDaysFee = 2 * remainingHours;
 
-            if (remainingMins > 0) {
+            if (remainingMinutes > 0) {
                 lastDaysFee += 2;
             }
 
