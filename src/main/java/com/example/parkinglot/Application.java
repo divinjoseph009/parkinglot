@@ -17,7 +17,7 @@ public class Application extends javafx.application.Application {
         ParkingLotUI parkingLotUI = new ParkingLotUI(stage);
 
         // Controller
-        Controller controller = new Controller(parkingLotUI, parkingLot, ticket);
+        Controller controller = new Controller(ticket, parkingLot, parkingLotUI);
         controller.runApplication();
     }
 

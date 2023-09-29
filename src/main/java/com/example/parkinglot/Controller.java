@@ -15,11 +15,10 @@ public class Controller {
     ParkingLot parkingLot;
     Ticket ticket;
 
-    public Controller(ParkingLotUI parkingLotUI, ParkingLot parkingLot, Ticket ticket){
-        this.window=parkingLotUI;
-        this.parkingLot=parkingLot;
+    public Controller(Ticket ticket, ParkingLot parkingLot, ParkingLotUI parkingLotUI ){
         this.ticket=ticket;
-
+        this.parkingLot=parkingLot;
+        this.window=parkingLotUI;
     }
 
     public void runApplication(){
