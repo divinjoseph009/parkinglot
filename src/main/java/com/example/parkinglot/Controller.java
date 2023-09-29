@@ -29,8 +29,8 @@ public class Controller {
     public void setUpHandlers(){
         window.getSubmitButton().setOnAction(e->{
             try{
-                String userEntryTime = this.window.getUserEntryTime();
-                String userExitTime = this.window.getUserExitTime();
+                String userEntryTime = window.getUserEntryTime();
+                String userExitTime = window.getUserExitTime();
                 ticket.setEntryTime(userEntryTime);
                 ticket.setExitTime(userExitTime);
                 LocalDateTime entryTime=ticket.getEntryTime();
