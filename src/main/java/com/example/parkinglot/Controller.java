@@ -15,19 +15,25 @@ public class Controller {
     Ticket ticket;
     ParkingLot parkingLot;
     Ticket ticketCalculation=new Ticket();
-    LocalDateTime entryTime=ticketCalculation.getEntryTime();
 
-    LocalDateTime exitTime=ticketCalculation.getExitTime();
 
 
     public Controller(ParkingLotUI parkingLotUI, ParkingLot parkingLot){
         this.window=parkingLotUI;
         this.parkingLot=parkingLot;
+        setUpHandlers();
     }
 
     public void setUpHandlers(){
         window.getSubmitButton().setOnAction(e->{
             try{
+                String userEntryTime = this.window.getUserEntryTime();
+                String userExitTime = this.window.getUserExitTime();
+                ticketCalculation.setEntryTime(userEntryTime);
+                ticketCalculation.setExitTime(userExitTime);
+                LocalDateTime entryTime=ticketCalculation.getEntryTime();
+                LocalDateTime exitTime=ticketCalculation.getExitTime();
+
                 if(entryTime.isBefore(exitTime)) {
                     int durationInDays = ticketCalculation.getDurationDays();
                     int durationInHours = ticketCalculation.getDurationHours();
