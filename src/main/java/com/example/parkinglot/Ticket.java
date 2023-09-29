@@ -34,7 +34,6 @@ public class Ticket {
     }
 
 
-
     //Calculate Duration from Entry and Exit Time
     public int getDurationDays() {
 

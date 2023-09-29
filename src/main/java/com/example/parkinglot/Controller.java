@@ -35,11 +35,14 @@ public class Controller {
             try{
                 String userEntryTime = window.getUserEntryTime();
                 String userExitTime = window.getUserExitTime();
-                ticket.setEntryTime(userEntryTime);
-                ticket.setExitTime(userExitTime);
+                String userEntryDate = window.getUserEntryDate();
+                String userExitDate = window.getUserExitDate();
+                String userEntryDateTime = userEntryDate + " " + userEntryTime;
+                String userExitDateTime = userExitDate + " " + userExitTime;
+                ticket.setEntryTime(userEntryDateTime);
+                ticket.setExitTime(userExitDateTime);
                 LocalDateTime entryTime=ticket.getEntryTime();
                 LocalDateTime exitTime=ticket.getExitTime();
-
 
 
                 if(entryTime.isBefore(exitTime)) {

@@ -16,8 +16,10 @@ public class ParkingLotUI {
 
     Stage stage;
     Label entryTimeLabel;
+    TextField entryDateText;
     TextField entryTimeText;
     Label exitTimeLabel;
+    TextField exitDateText;
     TextField exitTimeText;
     Button submitButton;
     Label durationResultLabel;
@@ -39,13 +41,19 @@ public class ParkingLotUI {
     private void createUIElements(){
         entryTimeLabel = new Label("Please enter the date and time the car entered the parking lot");
 
+        entryDateText = new TextField();
+        entryDateText.setPromptText("YYYY-MM-DD");
+
         entryTimeText = new TextField();
-        entryTimeText.setPromptText("YYYY-MM-DD HH:mm");
+        entryTimeText.setPromptText("HH:mm");
 
         exitTimeLabel = new Label("Please enter the date and time the car exited the parking lot");
 
+        exitDateText = new TextField();
+        exitDateText.setPromptText("YYYY-MM-DD");
+
         exitTimeText = new TextField();
-        exitTimeText.setPromptText("YYYY-MM-DD HH:mm");
+        exitTimeText.setPromptText("HH:mm");
 
         submitButton = new Button("Submit");
         submitButton.setStyle("-fx-font-size: 14px; -fx-background-color: #4CAF50; -fx-text-fill: white;");
@@ -62,7 +70,7 @@ public class ParkingLotUI {
     }
 
     private void setUpWindowLayout(){
-        VBox vBox = new VBox(20, entryTimeLabel, entryTimeText, exitTimeLabel, exitTimeText, submitButton, durationResultLabel, durationResult, feeResultLabel, feeResult);
+        VBox vBox = new VBox(20, entryTimeLabel,entryDateText, entryTimeText, exitTimeLabel, exitDateText, exitTimeText, submitButton, durationResultLabel, durationResult, feeResultLabel, feeResult);
         vBox.setPadding(new Insets(20));
         vBox.setAlignment(Pos.CENTER);
         BackgroundFill backgroundFill = new BackgroundFill(javafx.scene.paint.Color.LIGHTGRAY, CornerRadii.EMPTY, Insets.EMPTY);
@@ -74,7 +82,9 @@ public class ParkingLotUI {
     }
 
     public String getUserEntryTime() { return  entryTimeText.getText(); }
+    public String getUserEntryDate() { return  entryDateText.getText(); }
     public String getUserExitTime() { return  exitTimeText.getText(); }
+    public String getUserExitDate() { return  exitDateText.getText(); }
     public Button getSubmitButton() { return submitButton; }
     public Text getDurationResult() { return durationResult; }
     public Text getFeeResult() { return feeResult; }
