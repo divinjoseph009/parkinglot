@@ -43,13 +43,12 @@ public class Controller {
 
 
                 if(entryTime.isBefore(exitTime)) {
-                    int days = ticket.getDurationDays();
+                    double fees=parkingLot.calculateFees();
+                    int days = parkingLot.durationDays;
                     int hours = parkingLot.remainingHours;
                     int minutes = parkingLot.remainingMinutes;
-                    double fees=parkingLot.calculateFees();
 
-
-                    durationResult.setText("Days: " + days + " Hours: " + hours + " Minutes: " + minutes);
+                    durationResult.setText("Days: " + days + "     Hours: " + hours + "     Minutes: " + minutes);
                     feeResult.setText("$ " + fees);
                 }
 
